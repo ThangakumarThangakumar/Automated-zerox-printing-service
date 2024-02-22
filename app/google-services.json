@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "39863761023",
+    "firebase_url": "https://srec-online-xerox-automation-default-rtdb.firebaseio.com",
+    "project_id": "srec-online-xerox-automation",
+    "storage_bucket": "srec-online-xerox-automation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39863761023:android:f67d5aa550f1304565a74a",
+        "android_client_info": {
+          "package_name": "com.example.sreconlinexeroxautomation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBpzu4lXXqTxdxxpR2hbqdqm9_MCd9CV8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

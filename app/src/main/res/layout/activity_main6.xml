@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnUploadFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload File"
+        android:layout_marginBottom="16dp"/>
+
+    <CheckBox
+        android:id="@+id/checkboxBlackAndWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Black and White (Rs. 1 per page)"
+        android:layout_below="@id/btnUploadFile"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/edtCopiesBlackAndWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkboxBlackAndWhite"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:hint="Number of Copies"/>
+
+    <CheckBox
+        android:id="@+id/checkboxColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Color (Rs. 10 per page)"
+        android:layout_below="@id/edtCopiesBlackAndWhite"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/edtCopiesColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkboxColor"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:hint="Number of Copies"/>
+
+    <CheckBox
+        android:id="@+id/checkboxSpiral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spiral Binding (Rs. 40)"
+        android:textColor="@color/black"
+        android:layout_below="@id/edtCopiesColor"
+        android:layout_marginTop="16dp"/>
+
+    <CheckBox
+        android:id="@+id/checkboxCaligo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caligo Binding (Rs. 60)"
+        android:textColor="@color/black"
+        android:layout_below="@id/checkboxSpiral"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkboxCaligo"
+        android:layout_marginTop="4dp"
+        android:text="Calculate Total Cost"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvTotalCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Cost: Rs. 0"
+        android:textColor="@color/black"
+        android:layout_below="@id/btnCalculate"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

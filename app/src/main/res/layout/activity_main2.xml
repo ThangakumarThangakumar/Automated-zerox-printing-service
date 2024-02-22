@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SREC ONLINE XEROX AUTOMATION"
+            android:textSize="20sp"
+            android:textColor="@color/bblack"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STUDENT REGISTRATION"
+            android:textSize="20sp"
+            android:textColor="@color/bblack"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-medium" />
+        <TextView
+            android:id="@+id/texxx1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="sign in to continue!!"
+            android:textColor="@color/bblack"
+            android:gravity="left"
+            android:layout_marginLeft="0dp"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="30dp"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/regName"
+                android:hint="User name"
+                android:textColorHint="@color/bblack"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:inputType="text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rollnumber"
+                android:hint="Roll number"
+                app:counterMaxLength="10"
+                android:textColorHint="@color/bblack"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:inputType="text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/email"
+                android:hint="Email"
+                android:textColorHint="@color/bblack"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:inputType="text"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/passs1"
+                android:hint="password"
+                android:textColorHint="@color/bblack"
+                app:passwordToggleEnabled="false"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:inputType="textPassword"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:onClick="registeruser"
+                android:text="Submit"
+                android:textColor="@color/bblack" />
+
+            <Button
+                android:id="@+id/already"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Already have account? Login"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:backgroundTint="#00000000"
+                android:textColor="@color/bblack"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
