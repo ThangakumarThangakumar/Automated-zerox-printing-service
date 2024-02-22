@@ -1,7 +1,9 @@
 package com.example.sreconlinexeroxautomation;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,6 +30,8 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class UploadFile extends AppCompatActivity {
 
@@ -45,6 +50,13 @@ public class UploadFile extends AppCompatActivity {
 
     private StorageTask mUploadTask;
 
+    private EditText edtCopiesBlackAndWhite, edtCopiesColor;
+    private CheckBox checkboxBlackAndWhite, checkboxColor, checkboxSpiral, checkboxCaligo;
+    private Button btnCalculate, btnUpload;
+    private TextView tvTotalCost;
+    private StorageReference storageRef;
+    private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +67,18 @@ public class UploadFile extends AppCompatActivity {
         mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
         mEditTextFileName = findViewById(R.id.edit_text_file_name);
         mProgressBar = findViewById(R.id.progress_bar);
+
+        checkboxBlackAndWhite = findViewById(R.id.checkboxBlackAndWhite);
+        edtCopiesBlackAndWhite = findViewById(R.id.edtCopiesBlackAndWhite);
+        checkboxColor = findViewById(R.id.checkboxColor);
+        edtCopiesColor = findViewById(R.id.edtCopiesColor);
+        checkboxSpiral = findViewById(R.id.checkboxSpiral);
+        checkboxCaligo = findViewById(R.id.checkboxCaligo);
+        btnCalculate = findViewById(R.id.btnCalculate);
+        tvTotalCost = findViewById(R.id.tvTotalCost);
+        btnUpload = findViewById(R.id.btnUploadFile);
+
+        btnCalculate.setOnClickListener(view -> calculateTotalCost());
 
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
@@ -84,6 +108,43 @@ public class UploadFile extends AppCompatActivity {
             }
         });
     }
+
+    private void calculateTotalCost() {
+        // Retrieve values from UI components
+        int copiesBlackAndWhite = Integer.parseInt(edtCopiesBlackAndWhite.getText().toString());
+        int copiesColor = Integer.parseInt(edtCopiesColor.getText().toString());
+
+        // Initialize total cost with 0
+        int totalCost = 0;
+
+        // Check if Black and White checkbox is checked
+        if (checkboxBlackAndWhite.isChecked()) {
+            // Calculate cost and add to total
+            totalCost += copiesBlackAndWhite * 1; // Rs. 1 per page
+        }
+
+        // Check if Color checkbox is checked
+        if (checkboxColor.isChecked()) {
+            // Calculate cost and add to total
+            totalCost += copiesColor * 10; // Rs. 10 per page
+        }
+
+        // Check if Spiral Binding checkbox is checked
+        if (checkboxSpiral.isChecked()) {
+            // Add cost to total
+            totalCost += 40; // Rs. 40
+        }
+
+        // Check if Caligo Binding checkbox is checked
+        if (checkboxCaligo.isChecked()) {
+            // Add cost to total
+            totalCost += 60; // Rs. 60
+        }
+
+        // Update the TextView with the result
+        tvTotalCost.setText("Total Cost: Rs. " + totalCost);
+    }
+
 
     private void openFileChooser() {
         Intent intent = new Intent();

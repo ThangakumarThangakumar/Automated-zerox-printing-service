@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn1, btn2,upload;
+    Button btn1, btn2,upload,print;
 
     private static final int REQUEST_CODE_PERMISSIONS = 100;
     private static final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"};
@@ -24,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkAndRequestPermissions();
+
+        print=findViewById(R.id.print);
+        print.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(MainActivity.this, DocumentListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         upload=findViewById(R.id.upload);
         upload.setOnClickListener(new View.OnClickListener() {

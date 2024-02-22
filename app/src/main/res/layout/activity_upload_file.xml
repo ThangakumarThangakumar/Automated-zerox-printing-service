@@ -4,8 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context="com.codinginflow.firebaseuploadexample.MainActivity">
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <CheckBox
+        android:id="@+id/checkboxBlackAndWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Black and White (Rs. 1 per page)"
+        android:layout_below="@id/button_choose_file"
+        android:textColor="@color/black"
+        android:layout_marginTop="80dp"/>
+
+    <EditText
+        android:id="@+id/edtCopiesBlackAndWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkboxBlackAndWhite"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:hint="Number of Copies"/>
+
+    <CheckBox
+        android:id="@+id/checkboxColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Color (Rs. 10 per page)"
+        android:layout_below="@id/edtCopiesBlackAndWhite"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/edtCopiesColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkboxColor"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:hint="Number of Copies"/>
+
+    <CheckBox
+        android:id="@+id/checkboxSpiral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spiral Binding (Rs. 40)"
+        android:textColor="@color/black"
+        android:layout_below="@id/edtCopiesColor"
+        android:layout_marginTop="16dp"/>
+
+    <CheckBox
+        android:id="@+id/checkboxCaligo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caligo Binding (Rs. 60)"
+        android:textColor="@color/black"
+        android:layout_below="@id/checkboxSpiral"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkboxCaligo"
+        android:layout_marginTop="4dp"
+        android:text="Calculate Total Cost"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tvTotalCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Cost: Rs. 0"
+        android:textColor="@color/black"
+        android:layout_below="@id/btnCalculate"
+        android:layout_marginTop="16dp"/>
+
 
     <Button
         android:id="@+id/button_choose_file"
@@ -15,19 +88,14 @@
 
     <EditText
         android:id="@+id/edit_text_file_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/button_choose_file"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/button_choose_image"
         android:hint="Enter file name" />
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/progress_bar"
-        android:layout_below="@id/edit_text_file_name"
-        android:layout_marginTop="16dp" />
+
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -39,11 +107,10 @@
         android:layout_marginBottom="16dp" />
 
     <Button
+        android:layout_below="@+id/button_choose_file"
         android:id="@+id/button_upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:text="Upload" />
 
     <TextView
@@ -53,6 +120,7 @@
         android:layout_alignBottom="@+id/button_upload"
         android:layout_alignTop="@+id/button_upload"
         android:layout_marginStart="25dp"
+        android:textColor="@color/black"
         android:layout_toEndOf="@+id/button_upload"
         android:gravity="center"
         android:text="Show Uploads"
